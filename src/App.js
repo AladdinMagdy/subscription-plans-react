@@ -1,23 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
+import AppStepper from './components/AppStepper';
+import MultiForm from './components/MultiForm/';
+import { StepProvider } from './contexts/StepContext/StepContext';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <StepProvider url={'https://cloud-storage-prices-moberries.herokuapp.com/prices'}>
+        <AppStepper />
+        <MultiForm />
+      </StepProvider>
     </div>
   );
 }
