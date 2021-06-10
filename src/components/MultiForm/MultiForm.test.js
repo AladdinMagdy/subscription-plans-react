@@ -14,7 +14,7 @@ describe("formSteppingCheck", () => {
     axiosMock.get()
   })
 
-  it("firstStepShouldStep", async () => {
+  it("firstStep:formComplete", async () => {
     const { queryByTitle, getByText } = render(
       <StepProvider url={url}>
         <MultiForm />
@@ -29,7 +29,7 @@ describe("formSteppingCheck", () => {
     expect(screen.getByText(/Credit card number/i)).toBeTruthy()
   });
 
-  it("secondStepShouldNotStep", async () => {
+  it("secondStep:formIncomplete", async () => {
     const { queryByTitle } = render(
       <StepProvider step={2} url={url}>
         <MultiForm />
